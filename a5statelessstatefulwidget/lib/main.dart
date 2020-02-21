@@ -30,7 +30,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final List<Cart> _carts = [
     Cart(id: 1, title: 'Sayur', harga: 1000, qty: 1),
-    Cart(id: 2, title: 'Buah', harga: 1000, qty: 1)
+    Cart(id: 2, title: 'Buah', harga: 2000, qty: 2)
     ]; 
 
   @override
@@ -39,10 +39,10 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text('Belanja App'),
       ),
-      body: SingleChildScrollView(
+      body: Container(
         child: Column(
           children: <Widget>[
-            ProductList(_carts)
+            ProductList(_carts),
           ],
         ),
       ),
