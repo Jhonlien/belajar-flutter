@@ -34,24 +34,26 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  Random rand = new Random();
+  
   final List<Cart> _carts = [
-      Cart(id: 1, title: 'Sayur', harga: 1000, qty: 1),
-      Cart(id: 2, title: 'Buah', harga: 1200, qty: 1),
+      Cart(id: "1", title: 'Sayur', harga: 1000, qty: 1),
+      Cart(id: "2", title: 'Buah', harga: 1200, qty: 1),
     ]; 
 
-  Random rand = new Random();
+
 
   void _openModal(BuildContext context){
     showModalBottomSheet(
       context: context, 
       builder: (_){
-        return AddNew(_addNewItem);
+        return AddNew(_addNew);
       }
     );
   }
 
-  void _addNewItem(String title, double harga, int qty){
-    final newItem = Cart(id: rand.nextInt(10), title: title, harga: harga, qty: qty);
+  void _addNew(String title, double harga, int qty){
+    final newItem = Cart(id: DateTime.now().toString(), title: title, harga: harga, qty: qty);
     setState(() {
       _carts.add(newItem);
     });

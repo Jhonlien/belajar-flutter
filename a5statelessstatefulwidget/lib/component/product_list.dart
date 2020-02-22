@@ -12,15 +12,27 @@ class ProductList extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Container(
-      height: 400,
-      //APABILA CARTS KOSONG
       child: carts.isEmpty ?  
-      Column(
-        children: <Widget>[
-            Text('Tidak ada satupun Data')
-          ],
-        )
-        :
+      Card(
+        elevation : 4,
+        margin    : EdgeInsets.all(10), 
+        color: Colors.white,
+        child: 
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Text('No One Data')
+                  ],
+                )
+              ],
+            ),
+          ),
+      )
+      :
       ListView.builder(
         itemBuilder: (context, index) {
           return Card(

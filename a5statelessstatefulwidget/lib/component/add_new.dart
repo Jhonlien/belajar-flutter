@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AddNew extends StatefulWidget {
   final Function addNew;
 
+  //DIMANA FUNGSI INI DI-PASSING DARI main.dart, SEHINGGA KITA MEMBUAT CONSTRUCTOR UNTUK MEMINTA FUNGSINYA
   AddNew(this.addNew);
 
   @override
@@ -10,7 +11,6 @@ class AddNew extends StatefulWidget {
 }
 
 class _AddNewState extends State<AddNew>{
-
   final namaController    = TextEditingController();
   final hargaController   = TextEditingController();
   final jumlahController  = TextEditingController();
@@ -24,7 +24,7 @@ class _AddNewState extends State<AddNew>{
     if(nama.isEmpty || harga.isEmpty || jumlah <= 0){
       return;
     }
-    widget.addNew(nama, harga, jumlah);
+    widget.addNew(nama, double.parse(harga), jumlah);
     Navigator.of(context).pop();
   }
 
@@ -39,7 +39,7 @@ class _AddNewState extends State<AddNew>{
                 namaBarang(),
                 hargaBarang(),
                 jumlahBarang(),
-                simpanBarang() 
+                simpanBarang(),
             ],  
           ),
         ),  
@@ -75,10 +75,15 @@ class _AddNewState extends State<AddNew>{
   }
 
   Widget simpanBarang(){
-    return FlatButton(
-      color: Colors.pink,
-      onPressed: saveNewItem, 
-      child: Text('Simpan', style: TextStyle(color: Colors.white) ,)
-      );
+    return
+
+        SizedBox(
+          child: RaisedButton(
+            onPressed: saveNewItem,
+            color: Colors.pink,
+            child: Text('SIMPAN', style: TextStyle(color: Colors.white)),
+            ),
+        );
+   
   }
 }
