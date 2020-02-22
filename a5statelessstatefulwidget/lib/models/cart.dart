@@ -5,8 +5,7 @@ class Cart{
   final String title;
   final double harga;
   final int qty;
-
-
+  
   Cart({
     @required this.id,
     @required this.title,
