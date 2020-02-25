@@ -5,9 +5,6 @@ import 'component/dashboard.dart';
 import 'component/add_new.dart';
 import 'dart:math';
 
-
-
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -35,7 +32,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   Random rand = new Random();
-  
   final List<Cart> _carts = [
       Cart(id: "1", title: 'Sayur', harga: 1000, qty: 1),
       Cart(id: "2", title: 'Buah', harga: 1200, qty: 1),
@@ -65,7 +61,6 @@ class _HomeState extends State<Home> {
       _carts.clear(); //SET STATENYA KEMUDIAN CLEAR
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,7 +85,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.pink,
         tooltip: 'Increment',
         child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }

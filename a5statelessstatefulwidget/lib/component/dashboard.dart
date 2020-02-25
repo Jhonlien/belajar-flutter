@@ -8,7 +8,7 @@ class Dashboard extends StatelessWidget{
   //CONSTRUCTOR UNTUK MEMINTA DATA
   Dashboard(this.carts);
   //hitung jumlah carts
-  int getTotal{
+  int get getTotal{
     return carts.fold(0, (sum, item){
       return sum += item.qty;
     });

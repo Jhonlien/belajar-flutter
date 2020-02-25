@@ -76,7 +76,6 @@ class _AddNewState extends State<AddNew>{
 
   Widget simpanBarang(){
     return
-
         SizedBox(
           child: RaisedButton(
             onPressed: saveNewItem,
